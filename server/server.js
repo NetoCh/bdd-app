@@ -17,7 +17,7 @@ app.use(express.json());
 app.set('view engine', 'html');
 
 // Static folder
-app.use(express.static(__dirname + '/views/'));
+app.use(express.static(__dirname + '/public/'));
 
 // Defining route middleware
 app.use('/api', require('./routes/api'));
