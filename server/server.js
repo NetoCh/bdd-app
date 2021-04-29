@@ -22,6 +22,9 @@ app.use(express.static(__dirname + '/views/'));
 // Defining route middleware
 app.use('/api', require('./routes/api'));
 
+// Handle SPA
+app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+
 // Listening to port
 app.listen(port);
 console.log(`Listening On http://localhost:${port}/api`);
