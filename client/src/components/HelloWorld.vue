@@ -1,6 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <input type="text" v-model="text" />
+    <button @click="guardar">guardar</button>
+    <ul>
+      <li v-for="(row, index) in list" :key="index">{{row.nombre}}</li>
+    </ul>
   </div>
 </template>
 
@@ -9,18 +14,40 @@ import { db } from "@/firebase";
 
 export default {
   name: "HelloWorld",
+  data() {
+    return {
+      text: null,
+      list: null
+    };
+  },
   props: {
     msg: String,
   },
   created() {
     db.collection("usuarios")
-      .get()
-      .then((querySnapshot) => {
+    .onSnapshot((querySnapshot) => {
+        let list = [];
         querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
+            list.push(doc.data());
         });
-      });
+      this.list = list;
+    });
+  },
+  methods: {
+    guardar() {
+      const nombre = this.text;
+      db.collection("usuarios")
+        .doc()
+        .set({
+          nombre
+        })
+        .then(() => {
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
+    },
   },
 };
 </script>
