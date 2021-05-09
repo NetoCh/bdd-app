@@ -39,7 +39,7 @@
                   pill
                   variant="outline-danger"
                   @click="borrar(row)"
-                  ><BIconPencilSquare
+                  ><BIconTrash
                 /></b-button>
               </td>
             </tr>
@@ -101,8 +101,6 @@ export default {
                 console.log(err);
                 self.$swal("¡Error!", "Ha ocurrido un error", "error");
               });
-
-            console.log(doc);
           }
         });
     },
