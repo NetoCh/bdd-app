@@ -14,9 +14,19 @@ export default new Router({
       component: Home
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("./views/About.vue")
+      path: "/equipo",
+      name: "equipo",
+      component: () => import("./views/Equipo.vue")
+    },
+    {
+      path: "/equipo/:id",
+      name: "editar",
+      component: () => import("./components/equipo/EquipoEdit.vue")
+    },
+    {
+      path: "/registrar",
+      name: "reguistrar",
+      component: () => import("./components/equipo/EquipoRegister.vue")
     }
   ]
 });

@@ -9,16 +9,19 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "bootstrap": "^5.0.0",
+    "bootstrap-vue": "^2.21.2",
     "core-js": "^2.6.5",
     "firebase": "^8.4.2",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "vue-sweetalert2": "^4.3.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-plugin-unit-mocha": "^4.5.11",
-    "@vue/cli-service": "^4.5.11",
+    "@vue/cli-service": "^4.5.13",
     "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.1",

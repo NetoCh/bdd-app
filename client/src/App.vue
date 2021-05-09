@@ -1,22 +1,26 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Dashboard</router-link> |
+      <router-link to="/equipo">Equipo</router-link>
     </div>
     <router-view />
   </div>
 </template>
 
 <style>
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+@import '~sweetalert2/dist/sweetalert2.min.css';
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 #nav {
+  text-align: center;
   padding: 30px;
 }
 
