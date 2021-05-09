@@ -105,7 +105,7 @@ export default {
         });
     },
     editar(doc){
-      window.location.href = `/equipo/${doc.docId}`
+      this.$router.push(`/equipo/${doc.docId}`); 
     }
   },
 };
