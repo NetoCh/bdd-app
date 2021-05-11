@@ -60,10 +60,7 @@
           class="form-control"
           placeholder="Seleccione el tipo de equipo"
         >
-          <b-form-select-option value="cama" selected
-            >Cama</b-form-select-option
-          >
-          <b-form-select-option value="active">Activo</b-form-select-option>
+          <b-form-select-option value="active" selected>Activo</b-form-select-option>
           <b-form-select-option value="inactive"
             >No activo</b-form-select-option
           >
@@ -113,6 +110,7 @@ export default {
     db.collection("equipos")
       .doc(docId)
       .onSnapshot((doc) => {
+        if(!doc.exists) return;
         const { id, marca, estado, descripcion, tipo, info } = doc.data();
         this.id = id;
         this.marca = marca;

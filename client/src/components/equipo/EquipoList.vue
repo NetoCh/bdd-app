@@ -61,8 +61,9 @@ export default {
     };
   },
   created() {
-    db.collection("equipos").onSnapshot((querySnapshot) => {
+    db.collection("equipos").orderBy("createdAt", "desc").onSnapshot((querySnapshot) => {
       let list = [];
+      if(querySnapshot.empty) return;
       querySnapshot.forEach((doc) => {
         const docId = doc.id;
         let model = doc.data();
