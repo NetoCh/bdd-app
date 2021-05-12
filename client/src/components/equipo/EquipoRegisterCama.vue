@@ -38,7 +38,6 @@
           <b-form-select-option value="electrico"
             >Eléctrico</b-form-select-option
           >
-          <b-form-select-option value="colchon">Colchon</b-form-select-option>
         </b-form-select>
       </b-col>
       <b-col sm="1">
