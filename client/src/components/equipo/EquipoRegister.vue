@@ -60,9 +60,6 @@
           class="form-control"
           placeholder="Seleccione el tipo de equipo"
         >
-          <b-form-select-option value="cama" selected
-            >Cama</b-form-select-option
-          >
           <b-form-select-option value="active">Activo</b-form-select-option>
           <b-form-select-option value="inactive"
             >No activo</b-form-select-option
